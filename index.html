@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matt Harlow | Tools and projects</title>
+<meta name="description" content="Matt Harlow: tools and projects, laid out on a friendly little desktop. Home of the GW2 Crafting Profit Finder.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%237b4bff'/%3E%3Crect x='4' y='4' width='24' height='24' rx='5' fill='%23ffd23f' stroke='%231b1033' stroke-width='2'/%3E%3Cpath d='M10 10v12M10 16h12M22 10v12' stroke='%231b1033' stroke-width='3.5' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- Wallpaper: pure inline SVG, colours come from CSS custom properties so it adapts to dark mode. -->
+<svg class="wallpaper" aria-hidden="true" focusable="false" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" style="stop-color:var(--w-sky1)"/>
+      <stop offset="0.55" style="stop-color:var(--w-sky2)"/>
+      <stop offset="1" style="stop-color:var(--w-sky3)"/>
+    </linearGradient>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="2.2" style="fill:var(--w-dot)"/>
+    </pattern>
+    <pattern id="stripes" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="9" height="22" style="fill:var(--w-stripe)"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <circle cx="1230" cy="250" r="190" style="fill:var(--w-sun)"/>
+  <circle cx="1230" cy="250" r="130" style="fill:var(--w-sun2)"/>
+  <path d="M0 560 C220 440 380 640 620 560 S1000 400 1200 520 S1500 600 1600 500 V900 H0Z" style="fill:var(--w-hill1)"/>
+  <path d="M0 690 C260 600 420 780 700 700 S1100 560 1350 680 S1550 720 1600 660 V900 H0Z" style="fill:var(--w-hill2)"/>
+  <path d="M-20 800 C200 740 420 860 700 810 S1200 740 1620 820 V900 H-20Z" style="fill:var(--w-hill3)"/>
+  <path d="M140 120 q60 -90 150 -30 q80 -40 120 40 q70 10 40 80 H110 q-60 -30 30 -90Z" style="fill:var(--w-cloud)"/>
+  <path d="M760 70 q40 -60 100 -20 q60 -20 90 30 q50 10 25 55 H730 q-40 -20 30 -65Z" style="fill:var(--w-cloud)"/>
+  <rect x="0" y="560" width="1600" height="340" fill="url(#stripes)" opacity=".5"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+  <polygon points="1380,620 1440,520 1500,620" style="fill:var(--w-tri)"/>
+  <polygon points="1450,640 1490,570 1530,640" style="fill:var(--w-tri2)"/>
+  <circle cx="330" cy="470" r="46" style="fill:none;stroke:var(--w-ring);stroke-width:12"/>
+  <rect x="980" y="130" width="64" height="64" rx="14" transform="rotate(18 1012 162)" style="fill:var(--w-sq)"/>
+</svg>
+
+<header class="menubar">
+  <a class="brand" href="#welcome"><span aria-hidden="true">&#9670;</span> hrlw.dev</a>
+  <span class="menubar-note">a very small operating system</span>
+</header>
+
+<!-- Desktop icons. Real links/buttons. #hash links open or focus a window; others go out. -->
+<nav class="icons" aria-label="Desktop icons">
+  <ul class="icons-left">
+    <li><a class="icon" href="#welcome"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-home"/></svg><span>Home</span></a></li>
+    <li><a class="icon" href="#tools"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-tools"/></svg><span>Tools</span></a></li>
+    <li><a class="icon" href="https://gw2.hrlw.dev"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-gem"/></svg><span>GW2 Finder</span></a></li>
+  </ul>
+  <ul class="icons-right">
+    <li><a class="icon" href="https://github.com/matt-harlow-9"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-code"/></svg><span>GitHub</span></a></li>
+    <li><a class="icon" href="#trash" data-trash><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-trash"/></svg><span>Trash</span></a></li>
+  </ul>
+</nav>
+
+<main class="desktop" id="desktop">
+
+  <!-- WELCOME WINDOW -->
+  <section class="win" id="welcome" data-x="170" data-y="64" data-tabs aria-labelledby="welcome-t" tabindex="0">
+    <div class="titlebar">
+      <h2 class="wintitle" id="welcome-t">welcome.exe</h2>
+      <div class="winbtns"></div>
+    </div>
+    <div class="winbody">
+      <h1 class="hero">Hi, I'm <span class="mark">Matt Harlow</span></h1>
+      <p class="tagline">Tools and projects</p>
+
+      <div class="panel" data-tab="Hello">
+        <h3>Hello</h3>
+        <p>Welcome to my little corner of the internet. Drag a window, poke an icon, open the <span class="mark mark-2">Tools</span> folder. Nothing here bites.</p>
+        <p class="btnrow">
+          <a class="btn btn-primary" href="#tools">Open Tools</a>
+          <a class="btn" href="https://github.com/matt-harlow-9">GitHub</a>
+        </p>
+      </div>
+
+      <div class="panel" data-tab="The desk">
+        <h3>The desk</h3>
+        <p>This page pretends to be a computer. It runs on plain HTML, CSS and a <span class="mark">pinch</span> of JavaScript. No trackers, no cookies, and so no banner asking about cookies.</p>
+        <p>Turn JavaScript off and it politely becomes a normal page. The windows just stop being draggable.</p>
+      </div>
+
+      <div class="panel" data-tab="Keys">
+        <h3>Keys</h3>
+        <ul class="keys">
+          <li><kbd>Tab</kbd> hops between icons, windows and buttons</li>
+          <li><kbd>Esc</kbd> closes the focused window</li>
+          <li><kbd>&larr;</kbd> <kbd>&rarr;</kbd> <kbd>&uarr;</kbd> <kbd>&darr;</kbd> nudge a focused window</li>
+          <li>Closed something? Its icon brings it back.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS WINDOW -->
+  <section class="win win-tools" id="tools" data-x="720" data-y="190" aria-labelledby="tools-t" tabindex="0">
+    <div class="titlebar">
+      <h2 class="wintitle" id="tools-t">Tools</h2>
+      <div class="winbtns"></div>
+    </div>
+    <div class="winbody">
+      <ul class="cards">
+        <!--
+          ADD A TOOL: copy everything from the next <li class="card"> to its
+          closing </li>, paste it just below the last real card (above the
+          "Coming soon" placeholder), then edit the title, description and links.
+          Delete the "View code" link if there is no source. When you have a
+          few tools, you can delete the placeholder card too.
+          Optional: also add a desktop icon in the <nav class="icons"> above.
+        -->
+        <li class="card">
+          <span class="badge">Live</span>
+          <h3>GW2 Crafting Profit Finder</h3>
+          <p>Ranks Guild Wars 2 crafting recipes by profit using live Trading Post prices.</p>
+          <p class="btnrow">
+            <a class="btn btn-primary" href="https://gw2.hrlw.dev">Launch it</a>
+            <a class="btn" href="https://github.com/matt-harlow-9/gw2-crafting">View code</a>
+          </p>
+        </li>
+        <!-- end of card -->
+
+        <li class="card card-empty">
+          <span class="badge badge-soft">Slot 2</span>
+          <h3>More coming soon</h3>
+          <p>This slot is currently occupied by an extremely optimistic empty box.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TRASH WINDOW (easter egg; JS keeps it closed until you open the icon) -->
+  <section class="win win-trash" id="trash" data-x="300" data-y="150" aria-labelledby="trash-t" tabindex="0">
+    <div class="titlebar">
+      <h2 class="wintitle" id="trash-t">Trash</h2>
+      <div class="winbtns"></div>
+    </div>
+    <div class="winbody">
+      <p class="trash-msg" id="trash-msg" aria-live="polite">The trash is empty. Not even a dust bunny.</p>
+      <p class="btnrow"><button class="btn" type="button" id="trash-btn">Empty the trash</button></p>
+    </div>
+  </section>
+</main>
+
+<footer class="statusbar">
+  <span class="status-left">hrlw.dev OS 1.0</span>
+  <span class="chips" id="chips" aria-label="Minimised windows"></span>
+  <span class="status-right"><a href="https://github.com/matt-harlow-9">GitHub</a> <time id="clock"></time></span>
+</footer>
+
+<!-- Icon sprite (original, simple shapes) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <g id="i-home" stroke="#1b1033" stroke-width="3" stroke-linejoin="round">
+      <path d="M6 24 24 8l18 16z" fill="#ff5d8f"/><rect x="11" y="24" width="26" height="18" rx="2" fill="#fff4c9"/>
+      <rect x="20" y="30" width="8" height="12" fill="#7b4bff"/>
+    </g>
+    <g id="i-tools" stroke="#1b1033" stroke-width="3" stroke-linejoin="round">
+      <path d="M4 16h14l3 4h23v20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z" fill="#19d3c5"/>
+      <path d="M4 16v-4a2 2 0 0 1 2-2h10l3 4" fill="#ffd23f"/>
+      <circle cx="24" cy="31" r="5" fill="#fff4c9"/>
+    </g>
+    <g id="i-gem" stroke="#1b1033" stroke-width="3" stroke-linejoin="round">
+      <path d="M14 8h20l9 12-19 22L5 20z" fill="#ffd23f"/><path d="M5 20h38M14 8l5 12 5 22 5-22 5-12" fill="none"/>
+    </g>
+    <g id="i-code" stroke="#1b1033" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="8" width="40" height="32" rx="6" fill="#7ee8d8"/>
+      <path d="m19 18-6 6 6 6M29 18l6 6-6 6" fill="none"/>
+    </g>
+    <g id="i-trash" stroke="#1b1033" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10 14h28l-3 28H13z" fill="#c9c2ee"/><path d="M7 14h34M18 14V8h12v6M19 22v14M29 22v14" fill="none"/>
+    </g>
+  </defs>
+</svg>
+
+<noscript><style>.chips,.winbtns,.menubar-note{display:none}</style></noscript>
+</body>
+</html>
