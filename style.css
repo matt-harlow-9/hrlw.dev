@@ -110,6 +110,13 @@ h2 { font-size: 1.6rem; margin: 0; letter-spacing: -.01em; }
 .ghost { border-style: dashed; background-color: transparent; }
 .ghost h3, .ghost p:not(.mono) { color: var(--muted); }
 
+/* case-study pages */
+.page-title { margin-top: 0; }
+.prose { max-width: 42rem; margin-top: 32px; }
+.prose p, .prose li { margin: 0 0 12px; }
+.prose ul { padding-left: 1.2rem; margin: 0 0 16px; }
+.sub { font-size: 1.3rem; margin: 40px 0 12px; }
+
 footer { padding-bottom: 32px; }
 .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; padding-top: 20px; }
 .foot p { margin: 0; }

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wardrobe · Matt Harlow</title>
+<meta name="description" content="Wardrobe: a personal iOS app that keeps a digital closet and builds outfits for an occasion.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#1E1E20">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231E1E20'/%3E%3Cpath d='M9 7v18M14 7v18M19 7v18M24 7v18' stroke='%23F2735F' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="mono trace" href="../">hrlw.dev</a>
+    <nav aria-label="Primary">
+      <a class="trace" href="../#tools">Tools</a>
+      <a class="trace" href="https://github.com/matt-harlow-9">GitHub</a>
+    </nav>
+  </div>
+  <div class="rules" aria-hidden="true"></div>
+</header>
+
+<main id="main">
+  <section class="wrap section" aria-labelledby="title">
+    <p class="mono eyebrow">Case study / iOS</p>
+    <h1 id="title" class="page-title"><span class="strokes">Wardrobe</span></h1>
+    <p class="tagline">A digital closet that builds outfits for the occasion.</p>
+
+    <div class="prose">
+      <p>Wardrobe is an iOS app I built for myself. I add each piece I own with its color, brand, size and style, then pick an occasion such as business casual or a dinner date and the app assembles an outfit from what is actually in the closet.</p>
+      <p class="muted">Status: working personal app, running on my own phone. It is not on the App Store.</p>
+
+      <h2 class="sub"><span class="mono num">01</span> How outfits are chosen</h2>
+      <p>Outfit selection is a rules engine, not a language model. Every piece carries a category, a formality rating from 1 to 5, a warmth level, a fit and a color.</p>
+      <ul>
+        <li>The closet is filtered to the occasion&rsquo;s formality range before anything is combined.</li>
+        <li>Complete outfits are assembled: top, bottom and shoes, or a dress and shoes, with an optional jacket or coat.</li>
+        <li>Each combination is scored. Pieces close to the occasion&rsquo;s target formality score higher; stacked patterns, clashing accent colors and mixed warmth are penalised; wide bottoms score better with a less voluminous top; recently worn pieces rank lower.</li>
+        <li>A little randomness keeps &ldquo;show another&rdquo; from repeating itself.</li>
+      </ul>
+      <p>Because suggestions are built only from real pieces and explicit rules, the app never invents clothes you do not own.</p>
+
+      <h2 class="sub"><span class="mono num">02</span> Import from a product link</h2>
+      <p>Typing every piece in by hand is tedious, so the add screen accepts a product page link. The app reads the page on the phone, with no server and no API key. It looks for the structured product data most shops publish for search engines, and falls back to the data a page embeds for itself. A small set of keyword rules then turns the name, material and description into the app&rsquo;s fields.</p>
+      <p>For a pleated wide-leg trouser, for example, that yields category bottom, relaxed fit, formality 3, the brand, the material, and the product photo. I still enter the size and confirm the color, since a page lists every colorway.</p>
+
+      <h2 class="sub"><span class="mono num">03</span> Built with</h2>
+      <ul>
+        <li>SwiftUI and SwiftData, with all data stored on the device</li>
+        <li>PhotosUI for item photos</li>
+        <li>XcodeGen to generate the Xcode project from one config file</li>
+      </ul>
+
+      <h2 class="sub"><span class="mono num">04</span> Next</h2>
+      <p>An optional language-model step could pick among the top-scoring outfits and explain the choice in a sentence. The rules would still decide what is allowed.</p>
+
+      <p class="links">
+        <a class="trace" href="https://github.com/matt-harlow-9/wardrobe">Code</a>
+        <a class="trace" href="../#tools">Back to tools</a>
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="rules" aria-hidden="true"></div>
+    <div class="foot">
+      <a class="trace" href="https://github.com/matt-harlow-9">github.com/matt-harlow-9</a>
+      <p class="mono muted">&copy; 2026 Matt Harlow</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
